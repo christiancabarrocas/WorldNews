@@ -8,37 +8,52 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class ArticleTableView: UITableViewController {
 
-    var articlesList: NSArray = []
+    var articlesList = [Article]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getRemoteData()
+        makeRequest()
     }
     
-    func getRemoteData () {
-        Alamofire.request(.GET, apiURL, parameters:nil)
-            .responseJSON { (_, _, jsonData, error) -> Void in
-                
-                if error == nil {
-                    var dataDict:NSDictionary!
-                    dataDict = jsonData as NSDictionary
-                    self.articlesList = dataDict["results"] as NSArray
+    
+    private func makeRequest() {
+        Alamofire.request(.GET, apiURL)
+            .responseJSON { (request, response, data, error) in
+                if(error != nil) {
+                    NSLog("Error: \(error)")
                 }
-            }
+                else {
+                    let json = JSON(data!)
+                    self.parse(json)
+                }
+        }
     }
 
+    func parse(data:JSON) {
+        for (key: String, subJson: JSON) in data {
+            if (key == "results"){
+                let newData = subJson["results"] as NSDictionary
+                let article = Article(initData: newData)
+                articlesList.append(article)
+            }
+            if key == "copyright" {
+                NSLog("Copy","")
+            }
+        }
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.articlesList.count
+        return articlesList.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("articleCell", forIndexPath: indexPath) as ArticleTableCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("articleCell", forIndexPath: indexPath) as! UITableViewCell
         
-        let article = Article.init(initData: self.articlesList[indexPath.row] as NSDictionary)
-        cell.configureArticleCell(article)
+
         
         return cell
 
