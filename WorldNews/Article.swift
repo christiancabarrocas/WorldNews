@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Article {
+struct Article {
 
     var title:String?
     var abstract:String?
@@ -17,9 +17,9 @@ class Article {
     var thumbnail:NSURL?
     var author:String?
     
-    init () {
-//        super.init()
-    }
+//    init () {
+//
+//    }
     
      convenience init (initData:NSDictionary) {
         self.init()
