@@ -28,32 +28,38 @@ class ArticleTableView: UITableViewController {
                 }
                 else {
                     let json = JSON(data!)
-                    self.parse(json)
+//                    self.parse(json)
                 }
         }
     }
 
-    func parse(data:JSON) {
-        for (key: String, subJson: JSON) in data {
-            if (key == "results"){
-                let newData = subJson["results"] as NSDictionary
-                let article = Article(initData: newData)
-                articlesList.append(article)
-            }
-            if key == "copyright" {
-                NSLog("Copy","")
-            }
-        }
-    }
+//    func parse(data:JSON) {
+//        
+//        let articlesArray = data["results"].dictionaryValue
+//        for article in articlesArray {
+//            let newArticle = Article(initData: article)
+//            articlesList.append(newArticle)
+//        }
+//        
+//        for (key: String, subJson: JSON) in data {
+//            if (key == "results"){
+//                let newData = subJson["results"]
+//                let article = Article(initData: newData)
+//                articlesList.append(article)
+//            }
+//        }
+//    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 25
         return articlesList.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("articleCell", forIndexPath: indexPath) as! UITableViewCell
         
-
+        let sampleArticle = Article().sampleArticle()
+        cell.textLabel?.text = sampleArticle.title
         
         return cell
 
