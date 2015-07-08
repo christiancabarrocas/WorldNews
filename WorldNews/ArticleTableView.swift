@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import Alamofire
 
 class ArticleTableView: UITableViewController {
     
     //let articlesList: [Article] = Communications().makeRequest()
+    var article:Article!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Alamofire.request(.GET, apiURL).responseJSON { (request, response, data, error) -> Void in
+            print(response)
+        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
