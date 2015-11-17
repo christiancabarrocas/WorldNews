@@ -31,34 +31,27 @@ class Communications {
     class func retrieveNews () {
         Alamofire.request(.GET, apiURL)
             .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)   // result of response serialization
-                
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+                do {
+                    let json = try NSJSONSerialization.JSONObjectWithData(response.data!, options: .AllowFragments)
+                    
+                    if let results = json["results"] as? [[String: String]] {
+                        parse(results)
+//                        for new in results {
+//                            if let new = blog["name"] as? String {
+//                                names.append(name)
+//                            }
+//                        }
+                    }
+                } catch {
+                    print("error serializing JSON: \(error)")
                 }
         }
     }
-//    func makeRequest() -> [Article] {
-//        Alamofire.request(.GET, apiURL)
-//            .responseJSON { (request, response, data, error) in
-//                if(error != nil) {
-//                    NSLog("Error: \(error)")
-//                }
-//                else {
-//                    let json = JSON(data!)
-//                    return self.parse(json)
-//                }
-//        }
-//    }
-    
-//    private func parse(data:AnyObject) -> [Article]{
-//        
-//        var articlesList = [Article]()
-//        let articlesArray = data["results"]
-//        
+
+    class func parse(data:[[String:String]]) -> [Article]{
+        
+        let articlesList = [Article]()
+        
 //        for (index: String, subJson: JSON) in articlesArray {
 //            let title:String? = subJson["title"].string
 //            let section:String? = subJson["section"].string
@@ -67,6 +60,6 @@ class Communications {
 //            articlesList.append(newArticle)
 //        }
 //        
-//        return articlesList
-//    }
+        return articlesList
+    }
 }
