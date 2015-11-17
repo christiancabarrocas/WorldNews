@@ -28,14 +28,9 @@ import Alamofire
 
 class ArticleTableView: UITableViewController {
     
-    //let articlesList: [Article] = Communications().makeRequest()
-    var article:Article!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        Alamofire.request(.GET, apiURL).responseJSON { (request, response, data, error) -> Void in
-            print(response)
-        }
+        Communications.retrieveNews()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,10 +39,8 @@ class ArticleTableView: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier.article, forIndexPath: indexPath) as! ArticleListCell
-        
-        let sampleArticle = Article().sampleArticle()
-        cell.article = sampleArticle
+        let cell = tableView.dequeueReusableCellWithIdentifier("articleCell", forIndexPath: indexPath) as! ArticleListCell
+    
         return cell
 
     }

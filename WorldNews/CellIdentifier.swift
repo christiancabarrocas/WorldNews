@@ -25,6 +25,6 @@
 
 import Foundation
 
-enum CellIdentifier {
+enum CellIdentifier:String {
     case article = "articleCell"
 }

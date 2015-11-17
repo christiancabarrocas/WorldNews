@@ -25,10 +25,22 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 
 class Communications {
     
+    class func retrieveNews () {
+        Alamofire.request(.GET, apiURL)
+            .responseJSON { response in
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
+        }
+    }
 //    func makeRequest() -> [Article] {
 //        Alamofire.request(.GET, apiURL)
 //            .responseJSON { (request, response, data, error) in
@@ -41,8 +53,8 @@ class Communications {
 //                }
 //        }
 //    }
-//    
-//    private func parse(data:JSON) -> [Article]{
+    
+//    private func parse(data:AnyObject) -> [Article]{
 //        
 //        var articlesList = [Article]()
 //        let articlesArray = data["results"]
