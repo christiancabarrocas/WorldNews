@@ -26,27 +26,15 @@
 import UIKit
 
 enum MediaType {
-    case Photo
+    case Image
     case Video
 }
 
-enum MediaFormat {
-    case JPEG,PNG,PDF
-}
-
-struct Media {
-    
-    var title:String?
-    var format:MediaFormat?
+struct Media {    
+    var caption:String?
     var url:NSURL?
     var copyright:String?
     var width:Int?
     var height:Int?
     var type:MediaType?
-    var subtype:String?
-    
-    func sampleMedia() -> Media {
-        let media = Media(title: "A Script to Play the Role of Guest Star", format: .JPEG, url: "http://www.apple.com", copyright: "MIT", width: 300, height: 200, type: .Photo, subtype: "")
-        return media
-    }
 }

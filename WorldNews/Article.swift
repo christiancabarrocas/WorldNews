@@ -26,9 +26,9 @@
 import UIKit
 
 struct Article {
-
     var title:String?
     var abstract:String?
+//    var author:String?
 //    var url:NSURL?
     var date:String?
 //    var thumbnail:NSURL?
@@ -37,9 +37,5 @@ struct Article {
 //    var subsection:String?
 //    var source:String?
 //    var type:String?
-    
-    func sampleArticle() -> Article {
-        let article = Article(title: "A Script to Play the Role of Guest Star", abstract: "Filling your plate and keeping your wineglass.", date: "27/08/2015", section: "International")
-        return article
-    }
+
 }
