@@ -5,10 +5,27 @@
 //  Created by Christian Cabarrocas on 6/12/14.
 //  Copyright (c) 2014 ccs. All rights reserved.
 //
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 import UIKit
 
-class Article {
+struct Article {
 
     var title:String?
     var abstract:String?
@@ -21,27 +38,8 @@ class Article {
 //    var source:String?
 //    var type:String?
     
-    init () {
-
-    }
-    
-     convenience init (initData:NSDictionary) {
-        self.init()
-        section = initData["section"] as? String
-//        subsection = initData["subsection"] as? String
-//        type = initData["type"] as? String
-//        source = initData["source"] as? String
-        title = initData["title"] as? String
-        abstract = initData["abstract"] as? String
-//        url = initData["url"] as? NSURL
-        date = initData["updated_date"] as? String
-//        thumbnail = initData["thumbnail_standard"] as? NSURL
-//        author = initData["byline"] as? String
-    }
-    
     func sampleArticle() -> Article {
-        let dictionary:[String:String] = ["title":"A Script to Play the Role of Guest Star","abstract":"Filling your plate and keeping your wineglass.","section":"International"]
-        let article = Article(initData: dictionary)
+        let article = Article(title: "A Script to Play the Role of Guest Star", abstract: "Filling your plate and keeping your wineglass.", date: "27/08/2015", section: "International")
         return article
     }
 }

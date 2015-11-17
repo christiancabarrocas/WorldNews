@@ -1,9 +1,9 @@
 //
-//  ArticleListCell.swift
+//  CellIdentifier.swift
 //  WorldNews
 //
-//  Created by Christian Cabarrocas on 08/06/15.
-//  Copyright (c) 2015 Wasabilabs. All rights reserved.
+//  Created by Christian Cabarrocas on 17/11/15.
+//  Copyright © 2015 Wasabilabs. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,17 +23,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import UIKit
+import Foundation
 
-class ArticleListCell: UITableViewCell {
-
-    @IBOutlet var titleLabel:UILabel?
-    @IBOutlet var sectionLabel:UILabel?
-    
-    var article:Article? {
-        didSet {
-            titleLabel!.text = article!.title
-            sectionLabel!.text = article!.section
-        }
-    }
+enum CellIdentifier {
+    case article = "articleCell"
 }

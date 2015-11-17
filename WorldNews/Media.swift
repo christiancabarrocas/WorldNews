@@ -5,6 +5,23 @@
 //  Created by Christian Cabarrocas on 07/06/15.
 //  Copyright (c) 2015 Wasabilabs. All rights reserved.
 //
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 import UIKit
 
@@ -13,10 +30,14 @@ enum MediaType {
     case Video
 }
 
-class Media {
+enum MediaFormat {
+    case JPEG,PNG,PDF
+}
+
+struct Media {
     
     var title:String?
-    var format:String?
+    var format:MediaFormat?
     var url:NSURL?
     var copyright:String?
     var width:Int?
@@ -24,25 +45,8 @@ class Media {
     var type:MediaType?
     var subtype:String?
     
-    init () {
-        
-    }
-    
-    convenience init (initData:NSDictionary) {
-        self.init()
-        title = initData["title"] as? String
-        format = initData["format"] as? String
-        url = initData["url"] as? NSURL
-        copyright = initData["copyright"] as? String
-        width = initData["width"] as? Int
-        height = initData["height"] as? Int
-        type = initData["type"] as? MediaType
-        subtype = initData["subtype"] as? String
-    }
-    
     func sampleMedia() -> Media {
-        let dictionary = ["title":"A Script to Play the Role of Guest Star","abstract":"Filling your plate and keeping your wineglass upright are only two of the ways to contribute when someone else is the host."]
-        let media = Media(initData: dictionary)
+        let media = Media(title: "A Script to Play the Role of Guest Star", format: .JPEG, url: "http://www.apple.com", copyright: "MIT", width: 300, height: 200, type: .Photo, subtype: "")
         return media
     }
 }
