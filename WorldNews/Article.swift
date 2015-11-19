@@ -25,17 +25,9 @@
 
 import UIKit
 
-struct Article {
-    var title:String?
-    var abstract:String?
-//    var author:String?
-//    var url:NSURL?
-    var date:String?
-//    var thumbnail:NSURL?
-//    var author:String?
-    var section:String?
-//    var subsection:String?
-//    var source:String?
-//    var type:String?
-
-}
+//struct Article {
+//    let title:String
+//    let abstract:String
+//    let date:String
+//    let section:String
+//}

@@ -26,40 +26,40 @@
 import Foundation
 import Alamofire
 
-class Communications {
+struct Communicator {
     
-    class func retrieveNews () {
+    func retrieveNews () {
         Alamofire.request(.GET, apiURL)
             .responseJSON { response in
                 do {
-                    let json = try NSJSONSerialization.JSONObjectWithData(response.data!, options: .AllowFragments)
-                    
-                    if let results = json["results"] as? [[String: String]] {
-                        parse(results)
-//                        for new in results {
-//                            if let new = blog["name"] as? String {
-//                                names.append(name)
-//                            }
-//                        }
-                    }
+                    let news = try ArticleParser().parse(fromData:response.data!)
                 } catch {
                     print("error serializing JSON: \(error)")
                 }
         }
     }
+}
 
-    class func parse(data:[[String:String]]) -> [Article]{
+struct ArticleParser {
+    
+    enum Error: ErrorType {
+        case InvalidJSON
+    }
+    
+    func convert (data:Dictionary<String,String>) -> Article {
+        return Article(title:data["title"]!, abstract:data["abstract"]!, date:data["updated_date"]!, section:data["section"]!)
+    }
+    
+    func parse(fromData data: NSData) throws -> [Article] {
         
-        let articlesList = [Article]()
+        guard let jsonDict = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String : AnyObject],
+            results = jsonDict?["results"] as? [Dictionary<String,String>] else {
+                throw Error.InvalidJSON
+            }
         
-//        for (index: String, subJson: JSON) in articlesArray {
-//            let title:String? = subJson["title"].string
-//            let section:String? = subJson["section"].string
-//            let data:NSDictionary = [title:title,section:section]
-//            let newArticle:Article = Article(initData:data)
-//            articlesList.append(newArticle)
-//        }
-//        
-        return articlesList
+//        let articles = articlesListDict.flatMap { ArticleConverter().convert(<#T##data: [String : AnyObject]##[String : AnyObject]#>)}
+        let articles:[Article] = results.map(convert(results))
+        return articles
+        
     }
 }

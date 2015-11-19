@@ -26,11 +26,21 @@
 import UIKit
 import Alamofire
 
+struct Article {
+    var title:String
+    var abstract:String
+    var date:String
+    var section:String
+}
+
 class ArticleTableView: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Communications.retrieveNews()
+        Communicator().retrieveNews()
+        let data = ["title":"testTitle","abstract":"testAbstract","date":"testDate","section":"testSection"]
+        _ = Article(title: data["title"]!, abstract: data["abstract"]!, date: data["date"]!, section: data["section"]!)
+        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
