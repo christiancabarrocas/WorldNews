@@ -46,8 +46,13 @@ struct ArticleParser {
         case InvalidJSON
     }
     
-    func convert (data:Dictionary<String,String>) -> Article {
-        return Article(title:data["title"]!, abstract:data["abstract"]!, date:data["updated_date"]!, section:data["section"]!)
+    func convert (data:[Dictionary<String,String>]) -> [Article] {
+        var list:[Article]
+        for item in data {
+            list.append(Article(title:item["title"]!, abstract:item["abstract"]!, date:item["updated_date"]!, section:item["section"]!))
+        }
+        
+        return list
     }
     
     func parse(fromData data: NSData) throws -> [Article] {
@@ -58,7 +63,7 @@ struct ArticleParser {
             }
         
 //        let articles = articlesListDict.flatMap { ArticleConverter().convert(<#T##data: [String : AnyObject]##[String : AnyObject]#>)}
-        let articles:[Article] = results.map(convert(results))
+        let articles:[Article] = convert(results)
         return articles
         
     }
