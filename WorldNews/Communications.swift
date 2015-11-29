@@ -47,7 +47,7 @@ struct ArticleParser {
     }
     
     func convert (data:[Dictionary<String,String>]) -> [Article] {
-        var list:[Article]
+        var list:[Article] = []
         for item in data {
             list.append(Article(title:item["title"]!, abstract:item["abstract"]!, date:item["updated_date"]!, section:item["section"]!))
         }
