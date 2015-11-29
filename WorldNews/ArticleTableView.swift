@@ -35,22 +35,20 @@ struct Article {
 
 class ArticleTableView: UITableViewController {
     
+    var data:[Article] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        Communicator().retrieveNews()
-        let data = ["title":"testTitle","abstract":"testAbstract","date":"testDate","section":"testSection"]
-        _ = Article(title: data["title"]!, abstract: data["abstract"]!, date: data["date"]!, section: data["section"]!)
-        
+        data = Communicator().retrieveNews()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 25
-//        return articlesList.count
+        return data.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("articleCell", forIndexPath: indexPath) as! ArticleListCell
-    
+        cell.article = data[indexPath.row]
         return cell
 
     }

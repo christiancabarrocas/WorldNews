@@ -28,15 +28,17 @@ import Alamofire
 
 struct Communicator {
     
-    func retrieveNews () {
+    func retrieveNews () -> [Article] {
+        var news:[Article] = []
         Alamofire.request(.GET, apiURL)
             .responseJSON { response in
                 do {
-                    let news = try ArticleParser().parse(fromData:response.data!)
+                    news = try ArticleParser().parse(fromData:response.data!)
                 } catch {
                     print("error serializing JSON: \(error)")
                 }
         }
+        return news
     }
 }
 
@@ -62,7 +64,6 @@ struct ArticleParser {
                 throw Error.InvalidJSON
             }
         
-//        let articles = articlesListDict.flatMap { ArticleConverter().convert(<#T##data: [String : AnyObject]##[String : AnyObject]#>)}
         let articles:[Article] = convert(results)
         return articles
         
