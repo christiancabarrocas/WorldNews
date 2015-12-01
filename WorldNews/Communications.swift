@@ -33,7 +33,12 @@ struct Communicator {
         Alamofire.request(.GET, apiURL)
             .responseJSON { response in
                 do {
-                    news = try ArticleParser().parse(fromData:response.data!)
+                    let json: AnyObject? = try? NSJSONSerialization.JSONObjectWithData(response.data!, options: [])
+                    
+                    if let j: AnyObject = json {
+                        let user: Article? = Article.decode(j)
+                    }
+//                    news = try ArticleParser().parse(fromData:response.data!)
                 } catch {
                     print("error serializing JSON: \(error)")
                 }
@@ -48,24 +53,24 @@ struct ArticleParser {
         case InvalidJSON
     }
     
-    func convert (data:[Dictionary<String,String>]) -> [Article] {
-        var list:[Article] = []
-        for item in data {
-            list.append(Article(title:item["title"]!, abstract:item["abstract"]!, date:item["updated_date"]!, section:item["section"]!))
-        }
-        
-        return list
-    }
-    
-    func parse(fromData data: NSData) throws -> [Article] {
-        
-        guard let jsonDict = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String : AnyObject],
-            results = jsonDict?["results"] as? [Dictionary<String,String>] else {
-                throw Error.InvalidJSON
-            }
-        
-        let articles:[Article] = convert(results)
-        return articles
-        
-    }
+//    func convert (data:[Dictionary<String,String>]) -> [Article] {
+//        var list:[Article] = []
+//        for item in data {
+//            list.append(Article(title:item["title"]!, abstract:item["abstract"]!, date:item["updated_date"]!, section:item["section"]!))
+//        }
+//        
+//        return list
+//    }
+//    
+//    func parse(fromData data: NSData) throws -> [Article] {
+//        
+//        guard let jsonDict = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String : AnyObject],
+//            results = jsonDict?["results"] as? [Dictionary<String,String>] else {
+//                throw Error.InvalidJSON
+//            }
+//        
+//        let articles:[Article] = convert(results)
+//        return articles
+//        
+//    }
 }

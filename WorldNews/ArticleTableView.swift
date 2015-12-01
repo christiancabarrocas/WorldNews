@@ -26,12 +26,12 @@
 import UIKit
 import Alamofire
 
-struct Article {
-    var title:String
-    var abstract:String
-    var date:String
-    var section:String
-}
+//struct Article {
+//    var title:String
+//    var abstract:String
+//    var date:String
+//    var section:String
+//}
 
 class ArticleTableView: UITableViewController {
     

@@ -24,10 +24,23 @@
 // THE SOFTWARE.
 
 import UIKit
+import Argo
+import Curry
 
-//struct Article {
-//    let title:String
-//    let abstract:String
-//    let date:String
-//    let section:String
-//}
+struct Article {
+    let title:String
+    let abstract:String
+    let updated_date:String
+    let section:String
+}
+
+extension Article: Decodable {
+    static func decode(data: JSON) -> Decoded<Article> {
+        return curry(Article.init)
+            <^> data <| "title"
+            <*> data <| "abstract"
+            <*> data <| "updated_date"
+            <*> data <| "section"
+    }
+}
+
