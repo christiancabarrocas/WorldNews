@@ -36,7 +36,7 @@ struct Communicator {
                     let json: AnyObject? = try? NSJSONSerialization.JSONObjectWithData(response.data!, options: [])
                     
                     if let j: AnyObject = json {
-                        let user: Article? = Article.decode(j)
+                        let article: Article? = decode(j)
                     }
 //                    news = try ArticleParser().parse(fromData:response.data!)
                 } catch {
