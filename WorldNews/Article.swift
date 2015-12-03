@@ -24,23 +24,23 @@
 // THE SOFTWARE.
 
 import UIKit
-import Argo
-import Curry
+import ObjectMapper
 
-struct Article {
-    let title:String
-    let abstract:String
-    let updated_date:String
-    let section:String
-}
-
-extension Article: Decodable {
-    static func decode(data: JSON) -> Decoded<Article> {
-        return curry(Article.init)
-            <^> data <| "title"
-            <*> data <| "abstract"
-            <*> data <| "updated_date"
-            <*> data <| "section"
+struct Article : Mappable{
+    var title:String?
+    var abstract:String?
+    var date:String?
+    var section:String?
+    
+    init?(_ map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        title <- map["title"]
+        abstract <- map["abstract"]
+        date <- map["update_date"]
+        section <- map["section"]
     }
 }
 

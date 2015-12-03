@@ -1,3 +1,2 @@
 github "Alamofire/Alamofire"
-github "thoughtbot/Argo"
-github "thoughtbot/Curry"
+github "tristanhimmelman/AlamofireObjectMapper" ~> 2.1
