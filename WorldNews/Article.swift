@@ -26,11 +26,22 @@
 import UIKit
 import ObjectMapper
 
+enum ArticleType {
+    case Article
+    case Interactive
+}
+
 struct Article : Mappable{
     var title:String?
     var abstract:String?
     var date:String?
     var section:String?
+    var subsection:String?
+    var type:ArticleType?
+    var source:String?
+    var url:String?
+    var author:String?
+    var thumbnail:String?
     
     init?(_ map: Map) {
         
@@ -41,6 +52,12 @@ struct Article : Mappable{
         abstract <- map["abstract"]
         date <- map["update_date"]
         section <- map["section"]
+        subsection <- map["subsection"]
+        type <- map["itmem_type"]
+        source <- map["source"]
+        url <- map["url"]
+        author <- map["byline"]
+        thumbnail <- map["thumnail_standard"]
     }
 }
 

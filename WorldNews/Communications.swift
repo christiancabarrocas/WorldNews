@@ -25,30 +25,19 @@
 
 import Foundation
 import Alamofire
+import ObjectMapper
+import AlamofireObjectMapper
 
 struct Communicator {
     
     func retrieveNews () -> [Article] {
         var news:[Article] = []
-        Alamofire.request(.GET, apiURL)
-            .responseJSON { response in
-                do {
-                    let json: AnyObject? = try? NSJSONSerialization.JSONObjectWithData(response.data!, options: [])
-                    print(json)
-                }
+        Alamofire.request(.GET, apiURL).responseObject { (response:Response<NYResponse,NSError>) -> Void in
+            let nyResponse = response.result.value
+            if let someNews = nyResponse?.results {
+                news = someNews
+            }
         }
         return news
     }
-    
-//    func getNews () -> [Article] {
-//        Alamofire.request(.GET, apiURL).responseJSON { (response: Response<NYResponse, NSError>) in
-//            
-//            let nyResponse = response.result.value
-//            if let news = nyResponse?.results {
-//                for new in news {
-//                    print(new.abstract)
-//                }
-//            }
-//        }
-//    }
 }
