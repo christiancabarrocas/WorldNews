@@ -32,7 +32,10 @@ class ArticleTableView: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        data = Communicator().retrieveNews()
+        Communicator().retrieveNews { (result:[Article]) -> Void in
+            self.data = result
+            self.tableView.reloadData()
+        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
