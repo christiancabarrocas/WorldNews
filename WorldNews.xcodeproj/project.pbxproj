@@ -17,6 +17,7 @@
 		9EA083B11BFBC53400EA0B69 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA083AC1BFBBF9B00EA0B69 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9EAC24FD1C10E3B3008128B8 /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB719C61C10E2B100F922C1 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9EAC24FE1C10E4B1008128B8 /* AlamofireObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB719C51C10E2B100F922C1 /* AlamofireObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9EAC25001C13679E008128B8 /* ArticleListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC24FF1C13679E008128B8 /* ArticleListController.swift */; };
 		9EB719C41C10DF8500F922C1 /* NYResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB719C31C10DF8500F922C1 /* NYResponse.swift */; };
 		9EB719C71C10E2B100F922C1 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB719C51C10E2B100F922C1 /* AlamofireObjectMapper.framework */; };
 		9EB719C81C10E2B100F922C1 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EB719C61C10E2B100F922C1 /* ObjectMapper.framework */; };
@@ -63,6 +64,7 @@
 		9EA083A81BFBBAFB00EA0B69 /* NY Newswire API.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "NY Newswire API.rtf"; sourceTree = "<group>"; };
 		9EA083AA1BFBBDD600EA0B69 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		9EA083AC1BFBBF9B00EA0B69 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		9EAC24FF1C13679E008128B8 /* ArticleListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListController.swift; sourceTree = "<group>"; };
 		9EB719C31C10DF8500F922C1 /* NYResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYResponse.swift; sourceTree = "<group>"; };
 		9EB719C51C10E2B100F922C1 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
 		9EB719C61C10E2B100F922C1 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				9EB719C31C10DF8500F922C1 /* NYResponse.swift */,
 				9E06D64C1B243BC80033AA4E /* Media.swift */,
 				9EBF05911B22EBF800241111 /* ArticleTableView.swift */,
+				9EAC24FF1C13679E008128B8 /* ArticleListController.swift */,
 				9E06D6511B2561EA0033AA4E /* ArticleListCell.swift */,
 				9E06D64F1B255E920033AA4E /* Communications.swift */,
 				9EBF05921B22EBF800241111 /* Configuration.swift */,
@@ -280,6 +283,7 @@
 			files = (
 				9E06D6501B255E920033AA4E /* Communications.swift in Sources */,
 				9EB719C41C10DF8500F922C1 /* NYResponse.swift in Sources */,
+				9EAC25001C13679E008128B8 /* ArticleListController.swift in Sources */,
 				9EBF05931B22EBF800241111 /* Article.swift in Sources */,
 				9EA083A51BFB097900EA0B69 /* CellIdentifier.swift in Sources */,
 				9EBF05941B22EBF800241111 /* ArticleTableView.swift in Sources */,

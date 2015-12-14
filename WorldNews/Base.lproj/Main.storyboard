@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--News-->
@@ -24,7 +23,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_section" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Qu-qb-9qD">
-                                            <rect key="frame" x="8" y="8" width="50" height="20"/>
+                                            <rect key="frame" x="15" y="0.0" width="49.5" height="20"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="oy0-g2-s3W"/>
@@ -34,30 +33,24 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXb-qY-zGb">
-                                            <rect key="frame" x="8" y="31" width="38" height="20"/>
+                                            <rect key="frame" x="15" y="23" width="38" height="20"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="hFB-SG-zSx"/>
-                                                <constraint firstAttribute="width" constant="459" id="jzD-CJ-dnU"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="jzD-CJ-dnU"/>
-                                                </mask>
-                                            </variation>
                                         </label>
                                     </subviews>
                                     <animations/>
                                     <constraints>
                                         <constraint firstItem="oXb-qY-zGb" firstAttribute="top" secondItem="8Qu-qb-9qD" secondAttribute="bottom" constant="3" id="2qF-RN-eUp"/>
-                                        <constraint firstItem="oXb-qY-zGb" firstAttribute="leading" secondItem="GWP-O9-QK8" secondAttribute="leadingMargin" id="EZR-h0-1QM"/>
-                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="8Qu-qb-9qD" secondAttribute="trailing" constant="125" id="UoX-li-FHj"/>
-                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="oXb-qY-zGb" secondAttribute="trailing" constant="125" id="caf-Hi-Wvz"/>
-                                        <constraint firstItem="8Qu-qb-9qD" firstAttribute="leading" secondItem="GWP-O9-QK8" secondAttribute="leadingMargin" id="fQV-G6-s91"/>
-                                        <constraint firstItem="8Qu-qb-9qD" firstAttribute="top" secondItem="GWP-O9-QK8" secondAttribute="topMargin" id="les-7x-hEx"/>
+                                        <constraint firstItem="oXb-qY-zGb" firstAttribute="leading" secondItem="GWP-O9-QK8" secondAttribute="leading" constant="15" id="EZR-h0-1QM"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8Qu-qb-9qD" secondAttribute="trailing" constant="15" id="UoX-li-FHj"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oXb-qY-zGb" secondAttribute="trailing" constant="15" id="caf-Hi-Wvz"/>
+                                        <constraint firstItem="8Qu-qb-9qD" firstAttribute="leading" secondItem="GWP-O9-QK8" secondAttribute="leading" constant="15" id="fQV-G6-s91"/>
+                                        <constraint firstItem="8Qu-qb-9qD" firstAttribute="top" secondItem="GWP-O9-QK8" secondAttribute="top" id="les-7x-hEx"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>

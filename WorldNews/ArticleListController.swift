@@ -1,9 +1,9 @@
 //
-//  ArticleTableView.swift
+//  ArticleListController.swift
 //  WorldNews
 //
-//  Created by Christian Cabarrocas on 7/12/14.
-//  Copyright (c) 2014 ccs. All rights reserved.
+//  Created by Christian Cabarrocas on 05/12/15.
+//  Copyright © 2015 Wasabilabs. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,33 +23,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+import Foundation
 import UIKit
 
-class ArticleTableView: UITableViewController {
+struct ArticleListController {
     
-    var data:[Article] = []
-    let viewController = ArticleListController()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        viewController.getData { (result) -> Void in
-            self.data = result
-            self.tableView.reloadData()
+    func getData (completion: (result:[Article]) -> Void) {
+        Communicator().retrieveNews { (result:[Article]) -> Void in
+            if result.count > 0 {
+                completion(result: result)
+            }
         }
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("articleCell", forIndexPath: indexPath) as! ArticleListCell
-        cell.article = data[indexPath.row]
-        return cell
-
-    }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return viewController.getHeight()
+    func getHeight () -> CGFloat {
+        return 60
     }
 }
