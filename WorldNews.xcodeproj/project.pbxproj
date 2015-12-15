@@ -28,6 +28,7 @@
 		9EBF05931B22EBF800241111 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF05901B22EBF800241111 /* Article.swift */; };
 		9EBF05941B22EBF800241111 /* ArticleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF05911B22EBF800241111 /* ArticleTableView.swift */; };
 		9EBF05951B22EBF800241111 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF05921B22EBF800241111 /* Configuration.swift */; };
+		9EEB5A381C20A8AD00184AA9 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEB5A371C20A8AD00184AA9 /* ArticleDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		9EBF05901B22EBF800241111 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		9EBF05911B22EBF800241111 /* ArticleTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableView.swift; sourceTree = "<group>"; };
 		9EBF05921B22EBF800241111 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		9EEB5A371C20A8AD00184AA9 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				9EB719C31C10DF8500F922C1 /* NYResponse.swift */,
 				9E06D64C1B243BC80033AA4E /* Media.swift */,
 				9EBF05911B22EBF800241111 /* ArticleTableView.swift */,
+				9EEB5A371C20A8AD00184AA9 /* ArticleDetailViewController.swift */,
 				9EAC24FF1C13679E008128B8 /* ArticleListController.swift */,
 				9E06D6511B2561EA0033AA4E /* ArticleListCell.swift */,
 				9E06D64F1B255E920033AA4E /* Communications.swift */,
@@ -291,6 +294,7 @@
 				9EBF05951B22EBF800241111 /* Configuration.swift in Sources */,
 				9EBF05711B22E96700241111 /* AppDelegate.swift in Sources */,
 				9E06D64D1B243BC80033AA4E /* Media.swift in Sources */,
+				9EEB5A381C20A8AD00184AA9 /* ArticleDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
