@@ -52,4 +52,12 @@ class ArticleTableView: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return viewController.getHeight()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "_toArticleDetail" {
+            let indexPath = sender as! NSIndexPath
+            let detailView = ArticleDetailViewController(article: data[indexPath.row])
+            self.presentViewController(detailView, animated: true, completion: nil)
+        }
+    }
 }
