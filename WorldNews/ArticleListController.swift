@@ -1,9 +1,4 @@
-//
-//  ArticleListController.swift
-//  WorldNews
-//
-//  Created by Christian Cabarrocas on 05/12/15.
-//  Copyright © 2015 Wasabilabs. All rights reserved.
+//  Created by Christian Cabarrocas
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +25,7 @@ struct ArticleListController {
     
     func getData (completion: (result:[Article]) -> Void) {
         Communicator().retrieveNews { (result:[Article]) -> Void in
-            if result.count > 0 {
+            if result.hasItems() {
                 completion(result: result)
             }
         }

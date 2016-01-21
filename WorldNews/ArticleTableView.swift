@@ -1,9 +1,4 @@
-//
-//  ArticleTableView.swift
-//  WorldNews
-//
-//  Created by Christian Cabarrocas on 7/12/14.
-//  Copyright (c) 2014 ccs. All rights reserved.
+//  Created by Christian Cabarrocas
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -46,7 +41,6 @@ class ArticleTableView: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("articleCell", forIndexPath: indexPath) as! ArticleListCell
         cell.article = data[indexPath.row]
         return cell
-
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -55,8 +49,8 @@ class ArticleTableView: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "_toArticleDetail" {
-            let indexPath = sender as! NSIndexPath
-            let detailView = ArticleDetailViewController(article: data[indexPath.row])
+            let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell)
+            let detailView = ArticleDetailViewController(article: data[indexPath!.row])
             self.presentViewController(detailView, animated: true, completion: nil)
         }
     }

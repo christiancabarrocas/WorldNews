@@ -1,9 +1,4 @@
-//
-//  Media.swift
-//  WorldNews
-//
-//  Created by Christian Cabarrocas on 07/06/15.
-//  Copyright (c) 2015 Wasabilabs. All rights reserved.
+//  Created by Christian Cabarrocas
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal

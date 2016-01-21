@@ -1,9 +1,4 @@
-//
-//  AppDelegate.swift
-//  WorldNews
-//
-//  Created by Christian Cabarrocas on 06/06/15.
-//  Copyright (c) 2015 Wasabilabs. All rights reserved.
+//  Created by Christian Cabarrocas
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +24,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         return true
