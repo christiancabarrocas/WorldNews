@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/ObjectMapper-Swift.h</key>
 		<data>
-		WD8wJy8UMVJzEhtFzo28USwikYw=
+		taoblxbTOrmm7dPyJP4WCs36yt0=
 		</data>
 		<key>Headers/ObjectMapper.h</key>
 		<data>
@@ -14,23 +14,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qAYD+Gwkzfq/v3gEYXbgXilt1CE=
+		WgqW96oDJR3lLQS6VN1oj/NAdRE=
 		</data>
 		<key>Modules/ObjectMapper.swiftmodule/arm.swiftdoc</key>
 		<data>
-		KjuMCzYgg+dmT6fjI/sdXz7ldso=
+		cvq1PZIllEKDlzWu7q6PxNH35SA=
 		</data>
 		<key>Modules/ObjectMapper.swiftmodule/arm.swiftmodule</key>
 		<data>
-		WxM2PzQFHt/aYKdISArh9iWvkNg=
+		QVYFjcCU+8qX3xjGgeyZwJzVPsA=
 		</data>
 		<key>Modules/ObjectMapper.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		mvzwPYoWK0KUdBJPNLKeAhyAVH0=
+		rCXJW4qKB5qPHiDy4QTnNAz2ql0=
 		</data>
 		<key>Modules/ObjectMapper.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		VMNQXZXhkjMU4lO07T7KhOMiNQw=
+		82bAfCWoiOfgLJzN2qZRpTr1OUc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -41,7 +41,7 @@
 	<dict>
 		<key>Headers/ObjectMapper-Swift.h</key>
 		<data>
-		WD8wJy8UMVJzEhtFzo28USwikYw=
+		taoblxbTOrmm7dPyJP4WCs36yt0=
 		</data>
 		<key>Headers/ObjectMapper.h</key>
 		<data>
@@ -49,19 +49,19 @@
 		</data>
 		<key>Modules/ObjectMapper.swiftmodule/arm.swiftdoc</key>
 		<data>
-		KjuMCzYgg+dmT6fjI/sdXz7ldso=
+		cvq1PZIllEKDlzWu7q6PxNH35SA=
 		</data>
 		<key>Modules/ObjectMapper.swiftmodule/arm.swiftmodule</key>
 		<data>
-		WxM2PzQFHt/aYKdISArh9iWvkNg=
+		QVYFjcCU+8qX3xjGgeyZwJzVPsA=
 		</data>
 		<key>Modules/ObjectMapper.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		mvzwPYoWK0KUdBJPNLKeAhyAVH0=
+		rCXJW4qKB5qPHiDy4QTnNAz2ql0=
 		</data>
 		<key>Modules/ObjectMapper.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		VMNQXZXhkjMU4lO07T7KhOMiNQw=
+		82bAfCWoiOfgLJzN2qZRpTr1OUc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>

@@ -22,6 +22,7 @@ import UIKit
 
 class ArticleDetailViewController: UIViewController {
 
+    @IBOutlet var titleLabel:UILabel?
     var article:Article!
     
     override func viewDidLoad() {
@@ -29,7 +30,7 @@ class ArticleDetailViewController: UIViewController {
     }
 
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     convenience init() {

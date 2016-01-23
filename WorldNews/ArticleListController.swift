@@ -23,15 +23,13 @@ import UIKit
 
 struct ArticleListController {
     
-    func getData (completion: (result:[Article]) -> Void) {
+    let cellHeight:CGFloat = 60.0
+
+    func updateData (completion: (result:[Article]) -> Void) {
         Communicator().retrieveNews { (result:[Article]) -> Void in
             if result.hasItems() {
                 completion(result: result)
             }
         }
-    }
-    
-    func getHeight () -> CGFloat {
-        return 60
     }
 }

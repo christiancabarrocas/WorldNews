@@ -27,7 +27,7 @@ class ArticleTableView: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewController.getData { (result) -> Void in
+        viewController.updateData { (result) -> Void in
             self.data = result
             self.tableView.reloadData()
         }
@@ -38,17 +38,17 @@ class ArticleTableView: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("articleCell", forIndexPath: indexPath) as! ArticleListCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier.article.rawValue, forIndexPath: indexPath) as! ArticleListCell
         cell.article = data[indexPath.row]
         return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return viewController.getHeight()
+        return viewController.cellHeight
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "_toArticleDetail" {
+        if segue.identifier == SegueIdentifier.toDetail.rawValue {
             let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell)
             let detailView = ArticleDetailViewController(article: data[indexPath!.row])
             self.presentViewController(detailView, animated: true, completion: nil)
