@@ -22,30 +22,19 @@ import UIKit
 
 class ArticleDetailViewController: UIViewController {
 
-    @IBOutlet var titleLabel:UILabel?
+    @IBOutlet var titleLabel:UILabel!
+    var article:Article!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLabel()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    convenience init() {
-        self.init(article: nil)
-    }
-    
-    init(article: Article!) {
-        super.init(nibName: nil, bundle: nil)
-        guard let detailData = article else {
-            print("article data error")
-            return
-        }
-        setupLabels(detailData)
-    }
-    
-    private func setupLabels(article: Article) {
-        titleLabel?.text = article.abstract
+    private func setupLabel () {
+        titleLabel.text = article.title
     }
 }

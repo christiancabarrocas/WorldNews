@@ -50,8 +50,8 @@ class ArticleTableView: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == SegueIdentifier.toDetail.rawValue {
             let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell)
-            let detailView = ArticleDetailViewController(article: data[indexPath!.row])
-            self.navigationController?.pushViewController(detailView, animated: true)
+            let detailVC = segue.destinationViewController as! ArticleDetailViewController
+            detailVC.article = data[indexPath!.row]
         }
     }
 }
