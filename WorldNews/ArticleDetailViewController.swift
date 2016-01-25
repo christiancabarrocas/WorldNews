@@ -23,7 +23,6 @@ import UIKit
 class ArticleDetailViewController: UIViewController {
 
     @IBOutlet var titleLabel:UILabel?
-    var article:Article!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +37,15 @@ class ArticleDetailViewController: UIViewController {
     }
     
     init(article: Article!) {
-        self.article = article
         super.init(nibName: nil, bundle: nil)
+        guard let detailData = article else {
+            print("article data error")
+            return
+        }
+        setupLabels(detailData)
+    }
+    
+    private func setupLabels(article: Article) {
+        titleLabel?.text = article.abstract
     }
 }

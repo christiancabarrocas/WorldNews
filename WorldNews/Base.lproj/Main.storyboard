@@ -52,6 +52,7 @@
                                 <connections>
                                     <outlet property="sectionLabel" destination="8Qu-qb-9qD" id="6PJ-Gk-ISC"/>
                                     <outlet property="titleLabel" destination="oXb-qY-zGb" id="wTY-Xf-oOo"/>
+                                    <segue destination="1s9-WX-6mL" kind="show" identifier="_toArticleDetail" id="awn-bC-pAb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

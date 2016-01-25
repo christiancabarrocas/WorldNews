@@ -51,7 +51,7 @@ class ArticleTableView: UITableViewController {
         if segue.identifier == SegueIdentifier.toDetail.rawValue {
             let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell)
             let detailView = ArticleDetailViewController(article: data[indexPath!.row])
-            self.presentViewController(detailView, animated: true, completion: nil)
+            self.navigationController?.pushViewController(detailView, animated: true)
         }
     }
 }
