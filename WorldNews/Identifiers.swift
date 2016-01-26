@@ -27,3 +27,9 @@ enum CellIdentifier:String {
 enum SegueIdentifier:String {
     case toDetail = "_toArticleDetail"
 }
+
+enum StoryBoardIdentifier:String {
+    case mainSB = "Main"
+    case newsList = "_newListStoryBoardID"
+}
+
