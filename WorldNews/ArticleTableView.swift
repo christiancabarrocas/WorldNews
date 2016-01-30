@@ -48,16 +48,11 @@ class ArticleTableView: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-//        cell.contentView.backgroundColor = UIColor.clearColor()
-        
+
         let whiteRoundedView : UIView = UIView(frame: CGRectMake(0, 10, self.view.frame.size.width, 80))
         
         whiteRoundedView.layer.backgroundColor = CGColorCreate(CGColorSpaceCreateDeviceRGB(), [0.0, 0.0, 0.0, 1.0])
         whiteRoundedView.layer.masksToBounds = false
-//        whiteRoundedView.layer.shadowOffset = CGSizeMake(-1, 1)
-//        whiteRoundedView.layer.shadowOpacity = 0.2
-        
         cell.contentView.addSubview(whiteRoundedView)
         cell.contentView.sendSubviewToBack(whiteRoundedView)
     }
