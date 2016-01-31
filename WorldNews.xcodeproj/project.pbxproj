@@ -10,12 +10,12 @@
 		9E06D64D1B243BC80033AA4E /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E06D64C1B243BC80033AA4E /* Media.swift */; };
 		9E06D6501B255E920033AA4E /* Communications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E06D64F1B255E920033AA4E /* Communications.swift */; };
 		9E06D6521B2561EA0033AA4E /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E06D6511B2561EA0033AA4E /* ArticleListCell.swift */; };
+		9E3DA6311C5E09E500613DCA /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 9E3DA6301C5E09E500613DCA /* Cartfile */; };
 		9E9A0BA91C51729D0038FB47 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9A0BA81C51729D0038FB47 /* ArrayExtension.swift */; };
 		9E9A0BAB1C51732D0038FB47 /* ArrayExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9A0BAA1C51732D0038FB47 /* ArrayExtensionTest.swift */; };
 		9E9A0BAC1C51740B0038FB47 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9A0BA81C51729D0038FB47 /* ArrayExtension.swift */; };
 		9EA083A51BFB097900EA0B69 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA083A41BFB097900EA0B69 /* Identifiers.swift */; };
 		9EA083A91BFBBAFB00EA0B69 /* NY Newswire API.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9EA083A81BFBBAFB00EA0B69 /* NY Newswire API.rtf */; };
-		9EA083AB1BFBBDD600EA0B69 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 9EA083AA1BFBBDD600EA0B69 /* Cartfile */; };
 		9EAC25001C13679E008128B8 /* ArticleListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC24FF1C13679E008128B8 /* ArticleListController.swift */; };
 		9EB719C41C10DF8500F922C1 /* NYResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB719C31C10DF8500F922C1 /* NYResponse.swift */; };
 		9EBF05711B22E96700241111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBF05701B22E96700241111 /* AppDelegate.swift */; };
@@ -54,11 +54,11 @@
 		9E06D64C1B243BC80033AA4E /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		9E06D64F1B255E920033AA4E /* Communications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Communications.swift; sourceTree = "<group>"; };
 		9E06D6511B2561EA0033AA4E /* ArticleListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListCell.swift; sourceTree = "<group>"; };
+		9E3DA6301C5E09E500613DCA /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		9E9A0BA81C51729D0038FB47 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		9E9A0BAA1C51732D0038FB47 /* ArrayExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTest.swift; sourceTree = "<group>"; };
 		9EA083A41BFB097900EA0B69 /* Identifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		9EA083A81BFBBAFB00EA0B69 /* NY Newswire API.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "NY Newswire API.rtf"; sourceTree = "<group>"; };
-		9EA083AA1BFBBDD600EA0B69 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		9EAC24FF1C13679E008128B8 /* ArticleListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListController.swift; sourceTree = "<group>"; };
 		9EB719C31C10DF8500F922C1 /* NYResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYResponse.swift; sourceTree = "<group>"; };
 		9EBF056B1B22E96700241111 /* WorldNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,7 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				9EBF05741B22E96700241111 /* Main.storyboard */,
-				9EA083AA1BFBBDD600EA0B69 /* Cartfile */,
+				9E3DA6301C5E09E500613DCA /* Cartfile */,
 				9EBF05771B22E96700241111 /* Images.xcassets */,
 				9EBF056F1B22E96700241111 /* Info.plist */,
 				9EA083A81BFBBAFB00EA0B69 /* NY Newswire API.rtf */,
@@ -292,7 +292,7 @@
 			files = (
 				9EBF05761B22E96700241111 /* Main.storyboard in Resources */,
 				9EA083A91BFBBAFB00EA0B69 /* NY Newswire API.rtf in Resources */,
-				9EA083AB1BFBBDD600EA0B69 /* Cartfile in Resources */,
+				9E3DA6311C5E09E500613DCA /* Cartfile in Resources */,
 				9EBF05781B22E96700241111 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +321,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxTests.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AwesomeCache.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			name = Carthage;
 			outputPaths = (

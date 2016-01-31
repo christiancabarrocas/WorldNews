@@ -1,5 +1,6 @@
 github "Alamofire/Alamofire" "3.1.5"
 github "aschuch/AwesomeCache" "2.0"
+github "onevcat/Kingfisher" "2.0.1"
 github "Hearst-DD/ObjectMapper" "1.1.1"
 github "ReactiveX/RxSwift" "2.1.0"
 github "tristanhimmelman/AlamofireObjectMapper" "2.1.1"

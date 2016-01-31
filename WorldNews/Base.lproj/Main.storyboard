@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1NY-UP-bkU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1NY-UP-bkU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -40,7 +40,11 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F5L-Rg-4Zi">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                        </imageView>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="oXb-qY-zGb" firstAttribute="leading" secondItem="GWP-O9-QK8" secondAttribute="leading" constant="15" id="EZR-h0-1QM"/>
                                         <constraint firstItem="8Qu-qb-9qD" firstAttribute="top" secondItem="oXb-qY-zGb" secondAttribute="bottom" id="SvL-UX-Fbi"/>
@@ -50,7 +54,6 @@
                                         <constraint firstItem="8Qu-qb-9qD" firstAttribute="leading" secondItem="GWP-O9-QK8" secondAttribute="leading" constant="15" id="fQV-G6-s91"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="sectionLabel" destination="8Qu-qb-9qD" id="6PJ-Gk-ISC"/>
                                     <outlet property="titleLabel" destination="oXb-qY-zGb" id="wTY-Xf-oOo"/>
