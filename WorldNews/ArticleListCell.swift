@@ -19,16 +19,21 @@
 // THE SOFTWARE.
 
 import UIKit
+import Kingfisher
 
 class ArticleListCell: UITableViewCell {
 
     @IBOutlet var titleLabel:UILabel?
     @IBOutlet var sectionLabel:UILabel?
+    @IBOutlet var backgroundImage:UIImageView?
     
     var article:Article? {
         didSet {
             titleLabel!.text = article!.title
             sectionLabel!.text = article!.section
+            if let backURL = NSURL(string: (article?.thumbnail)!) {
+                backgroundImage?.kf_setImageWithURL(backURL, placeholderImage: nil)
+            }
         }
     }
 }
