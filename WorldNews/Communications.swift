@@ -20,14 +20,13 @@
 
 import Foundation
 import Alamofire
-import ObjectMapper
 import AlamofireObjectMapper
 
 struct Communicator {
     
     func retrieveNews (completion: (result:[Article]) -> Void) {
         var news:[Article] = []
-        Alamofire.request(.GET, apiTopStories).responseObject { (response:Response<NYResponse,NSError>) -> Void in
+        Alamofire.request(.GET, apiURL).responseObject { (response:Response<NYResponse,NSError>) -> Void in
             let nyResponse = response.result.value
             if let someNews = nyResponse?.results {
                 news = someNews

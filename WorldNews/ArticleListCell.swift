@@ -31,7 +31,10 @@ class ArticleListCell: UITableViewCell {
         didSet {
             titleLabel!.text = article!.title
             sectionLabel!.text = article!.section
-            if let backURL = NSURL(string: (article?.thumbnail)!) {
+            guard let thumb = article!.thumbnail else {
+                return
+            }
+            if let backURL = NSURL(string: thumb) {
                 backgroundImage?.kf_setImageWithURL(backURL, placeholderImage: nil)
             }
         }
