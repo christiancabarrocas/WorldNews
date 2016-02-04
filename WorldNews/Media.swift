@@ -20,9 +20,8 @@
 
 import UIKit
 
-enum MediaType {
-    case Image
-    case Video
+enum MediaType:String {
+    case Image = "image"
 }
 
 struct Media {    

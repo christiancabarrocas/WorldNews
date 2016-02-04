@@ -31,7 +31,7 @@ class ArticleListCell: UITableViewCell {
         didSet {
             titleLabel!.text = article!.title
             sectionLabel!.text = article!.section
-            guard let thumb = article!.thumbnail else {
+            guard let thumb = article!.testURL else {
                 return
             }
             if let backURL = NSURL(string: thumb) {

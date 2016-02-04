@@ -37,6 +37,8 @@ struct Article : Mappable{
     var url:String?
     var author:String?
     var thumbnail:String?
+    var multimedia:[Media]?
+    var testURL:String?
     
     init?(_ map: Map) {
         
@@ -53,6 +55,8 @@ struct Article : Mappable{
         url <- map["url"]
         author <- map["byline"]
         thumbnail <- map["thumnail_standard"]
+        multimedia <- map["multimedia"]
+        testURL <- map["multimedia.0.url"]
     }
 }
 
