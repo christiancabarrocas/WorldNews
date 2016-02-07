@@ -35,7 +35,9 @@ class ArticleListCell: UITableViewCell {
                 return
             }
             if let backURL = NSURL(string: thumb) {
-                backgroundImage?.kf_setImageWithURL(backURL, placeholderImage: nil)
+                backgroundImage?.kf_setImageWithURL(backURL,
+                    placeholderImage: nil,
+                    optionsInfo: [.Transition(ImageTransition.Fade(1))])
             }
         }
     }
