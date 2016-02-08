@@ -34,6 +34,7 @@ class ArticleListCell: UITableViewCell {
             guard let thumb = article!.testURL else {
                 return
             }
+            //TODO - Need to add gradient from black to transparent and black&white filter
             if let backURL = NSURL(string: thumb) {
                 backgroundImage?.kf_setImageWithURL(backURL,
                     placeholderImage: nil,
