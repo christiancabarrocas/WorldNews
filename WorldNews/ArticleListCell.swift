@@ -21,6 +21,7 @@ class ArticleListCell: UITableViewCell {
                 backgroundImage?.kf_setImageWithURL(backURL,
                     placeholderImage: nil,
                     optionsInfo: [.Transition(ImageTransition.Fade(1))])
+                backgroundImage?.blackAndWhite()
             }
         }
     }
