@@ -28,4 +28,10 @@ extension UIImageView {
             return filter!.outputImage!
         }
     }
+    
+    func crop(imageToCrop:UIImage, toRect rect:CGRect) -> UIImage{
+        let imageRef:CGImageRef = CGImageCreateWithImageInRect(imageToCrop.CGImage, rect)!
+        let cropped:UIImage = UIImage(CGImage:imageRef)
+        return cropped
+    }
 }
