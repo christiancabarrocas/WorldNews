@@ -22,9 +22,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F5L-Rg-4Zi">
-                                            <rect key="frame" x="0.0" y="0.5" width="600" height="79.5"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXb-qY-zGb">
                                             <rect key="frame" x="15" y="20" width="38" height="20"/>
                                             <constraints>
@@ -54,14 +51,7 @@
                                         <constraint firstItem="8Qu-qb-9qD" firstAttribute="leading" secondItem="GWP-O9-QK8" secondAttribute="leading" constant="15" id="fQV-G6-s91"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <constraints>
-                                    <constraint firstItem="F5L-Rg-4Zi" firstAttribute="leading" secondItem="htl-AN-KUx" secondAttribute="leading" id="7cu-4T-nqL"/>
-                                    <constraint firstItem="F5L-Rg-4Zi" firstAttribute="top" secondItem="htl-AN-KUx" secondAttribute="top" id="KhN-ns-QIJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="F5L-Rg-4Zi" secondAttribute="trailing" id="fxk-j9-lCH"/>
-                                    <constraint firstAttribute="bottom" secondItem="F5L-Rg-4Zi" secondAttribute="bottom" id="piu-Fd-zzU"/>
-                                </constraints>
                                 <connections>
-                                    <outlet property="backgroundImage" destination="F5L-Rg-4Zi" id="u8Y-TP-KDZ"/>
                                     <outlet property="sectionLabel" destination="8Qu-qb-9qD" id="6PJ-Gk-ISC"/>
                                     <outlet property="titleLabel" destination="oXb-qY-zGb" id="wTY-Xf-oOo"/>
                                     <segue destination="1s9-WX-6mL" kind="show" identifier="_toArticleDetail" id="awn-bC-pAb"/>
@@ -91,21 +81,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ebd-30-vib">
+                                <rect key="frame" x="0.0" y="64" width="600" height="230"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="isH-z9-Oqp"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsI-p0-lGv">
-                                <rect key="frame" x="20" y="83" width="36" height="20.5"/>
+                                <rect key="frame" x="20" y="263.5" width="36" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ebd-30-vib" firstAttribute="top" secondItem="HHg-tG-fV0" secondAttribute="bottom" id="7D1-h6-Vy2"/>
+                            <constraint firstItem="ebd-30-vib" firstAttribute="leading" secondItem="4zc-Sr-if6" secondAttribute="leadingMargin" constant="-20" id="QPV-wx-p4Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ebd-30-vib" secondAttribute="trailing" constant="-20" id="aF0-0y-s50"/>
                             <constraint firstAttribute="leadingMargin" secondItem="vsI-p0-lGv" secondAttribute="leading" id="j3d-T4-yRS"/>
-                            <constraint firstItem="vsI-p0-lGv" firstAttribute="top" secondItem="HHg-tG-fV0" secondAttribute="bottom" constant="19" id="mzm-JN-gQA"/>
+                            <constraint firstItem="ebd-30-vib" firstAttribute="bottom" secondItem="vsI-p0-lGv" secondAttribute="bottom" constant="10" id="v4I-er-RiC"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="vsI-p0-lGv" secondAttribute="trailing" id="zhF-cR-JA9"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="image" destination="ebd-30-vib" id="IgD-hk-Nlg"/>
                         <outlet property="titleLabel" destination="vsI-p0-lGv" id="sCp-Fb-VWp"/>
                     </connections>
                 </viewController>
