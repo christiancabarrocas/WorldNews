@@ -3,3 +3,4 @@ github "tristanhimmelman/AlamofireObjectMapper" ~> 2.1
 github "ReactiveX/RxSwift" ~> 2.0
 github "aschuch/AwesomeCache" ~> 2.0
 github "onevcat/Kingfisher" ~> 2.0
+github "RxSwiftCommunity/RxDataSources"

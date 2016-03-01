@@ -70,6 +70,7 @@ class ImageViewExtensionTests: XCTestCase {
         
         imageView.kf_setImageWithURL(URL, placeholderImage: nil, optionsInfo: nil, progressBlock: { (receivedSize, totalSize) -> () in
             progressBlockIsCalled = true
+            XCTAssertTrue(NSThread.isMainThread())
         }) { (image, error, cacheType, imageURL) -> () in
             expectation.fulfill()
             
@@ -80,6 +81,25 @@ class ImageViewExtensionTests: XCTestCase {
             XCTAssert(self.imageView.kf_webURL == imageURL, "Web URL should equal to the downloaded url.")
             
             XCTAssert(cacheType == .None, "The cache type should be none here. This image was just downloaded.")
+            XCTAssertTrue(NSThread.isMainThread())
+        }
+        
+        waitForExpectationsWithTimeout(5, handler: nil)
+    }
+    
+    func testImageDownloadCompletionHandlerRunningOnMainQueue() {
+        let expectation = expectationWithDescription("wait for downloading image")
+        
+        let URLString = testKeys[0]
+        stubRequest("GET", URLString).andReturn(200).withBody(testImageData)
+        let URL = NSURL(string: URLString)!
+        
+        let customQueue = dispatch_queue_create("com.kingfisher.testQueue", DISPATCH_QUEUE_SERIAL)
+        imageView.kf_setImageWithURL(URL, placeholderImage: nil, optionsInfo: [.CallbackDispatchQueue(customQueue)], progressBlock: { (receivedSize, totalSize) -> () in
+            XCTAssertTrue(NSThread.isMainThread())
+        }) { (image, error, cacheType, imageURL) -> () in
+            XCTAssertTrue(NSThread.isMainThread(), "The image extension callback should be always in main queue.")
+            expectation.fulfill()
         }
         
         waitForExpectationsWithTimeout(5, handler: nil)
@@ -151,6 +171,8 @@ class ImageViewExtensionTests: XCTestCase {
         var progressBlockIsCalled = false
         var completionBlockIsCalled = false
         
+        cleanDefaultCache()
+        
         let task = imageView.kf_setImageWithURL(URL, placeholderImage: nil, optionsInfo: nil, progressBlock: { (receivedSize, totalSize) -> () in
             progressBlockIsCalled = true
             }) { (image, error, cacheType, imageURL) -> () in
@@ -167,7 +189,7 @@ class ImageViewExtensionTests: XCTestCase {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(Double(NSEC_PER_SEC) * 0.2)), dispatch_get_main_queue()) { () -> Void in
             expectation.fulfill()
             XCTAssert(progressBlockIsCalled == false, "ProgressBlock should not be called since it is canceled.")
-            XCTAssert(completionBlockIsCalled == true, "CompletionBlock should not be called since it is canceled.")
+            XCTAssert(completionBlockIsCalled == true, "CompletionBlock should be called with error.")
         }
         
         waitForExpectationsWithTimeout(5, handler: nil)

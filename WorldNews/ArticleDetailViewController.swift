@@ -24,6 +24,12 @@ class ArticleDetailViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var articleText:UITextView! {
+        didSet {
+            articleText.text = article!.abstract
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

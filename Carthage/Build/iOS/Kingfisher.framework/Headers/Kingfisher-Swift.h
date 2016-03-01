@@ -88,7 +88,6 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #if defined(__has_feature) && __has_feature(modules)
 @import ObjectiveC;
 @import Foundation;
-@import Foundation.NSURLSession;
 @import UIKit;
 #endif
 
@@ -115,6 +114,9 @@ SWIFT_CLASS("_TtC10Kingfisher15ImageDownloader")
 /// Use this to set supply a configuration for the downloader. By default, NSURLSessionConfiguration.ephemeralSessionConfiguration() will be used. You could change the configuration before a downloaing task starts. A configuration without persistent storage for caches is requsted for downloader working correctly.
 @property (nonatomic, strong) NSURLSessionConfiguration * __nonnull sessionConfiguration;
 
+/// Whether the download requests should use pipeling or not. Default is false.
+@property (nonatomic) BOOL requestsUsePipeling;
+
 /// Delegate of this ImageDownloader object. See ImageDownloaderDelegate protocol for more.
 @property (nonatomic, weak) id <ImageDownloaderDelegate> __nullable delegate;
 
@@ -133,32 +135,9 @@ SWIFT_CLASS("_TtC10Kingfisher15ImageDownloader")
 @interface ImageDownloader (SWIFT_EXTENSION(Kingfisher))
 @end
 
-@class NSURLSession;
-@class NSURLSessionDataTask;
-@class NSURLResponse;
-@class NSData;
-@class NSURLSessionTask;
-@class NSError;
-@class NSURLAuthenticationChallenge;
-@class NSURLCredential;
-
-@interface ImageDownloader (SWIFT_EXTENSION(Kingfisher)) <NSURLSessionDataDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate>
-
-/// This method is exposed since the compiler requests. Do not call it.
-- (void)URLSession:(NSURLSession * __nonnull)session dataTask:(NSURLSessionDataTask * __nonnull)dataTask didReceiveResponse:(NSURLResponse * __nonnull)response completionHandler:(void (^ __nonnull)(NSURLSessionResponseDisposition))completionHandler;
-
-/// This method is exposed since the compiler requests. Do not call it.
-- (void)URLSession:(NSURLSession * __nonnull)session dataTask:(NSURLSessionDataTask * __nonnull)dataTask didReceiveData:(NSData * __nonnull)data;
-
-/// This method is exposed since the compiler requests. Do not call it.
-- (void)URLSession:(NSURLSession * __nonnull)session task:(NSURLSessionTask * __nonnull)task didCompleteWithError:(NSError * __nullable)error;
-
-/// This method is exposed since the compiler requests. Do not call it.
-- (void)URLSession:(NSURLSession * __nonnull)session didReceiveChallenge:(NSURLAuthenticationChallenge * __nonnull)challenge completionHandler:(void (^ __nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * __nullable))completionHandler;
-@end
-
 @class UIImage;
 @class NSURL;
+@class NSURLResponse;
 
 
 /// Protocol of ImageDownloader.
@@ -250,7 +229,7 @@ SWIFT_PROTOCOL("_TtP10Kingfisher23ImageDownloaderDelegate_")
 
 @interface UIImage (SWIFT_EXTENSION(Kingfisher))
 
-/// Normalize the image. This method will try to redraw an image with orientation and sclae considered.
+/// Normalize the image. This method will try to redraw an image with orientation and scale considered.
 ///
 /// \returns  The normalized image with orientation set to up and correct scale.
 - (UIImage * __nonnull)kf_normalizedImage;

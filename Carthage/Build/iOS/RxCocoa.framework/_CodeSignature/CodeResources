@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/RxCocoa-Swift.h</key>
 		<data>
-		9k540ThbWN49AieE43hh1G8l1c0=
+		JTgDIOoDfUKiGglV1H0tA5XVRCA=
 		</data>
 		<key>Headers/RxCocoa.h</key>
 		<data>
@@ -30,23 +30,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		o3xT/tOFRr/60L4sKo1ZQizJ64A=
+		6bG9yio10uDR7frz2tPpcCGX7YA=
 		</data>
 		<key>Modules/RxCocoa.swiftmodule/arm.swiftdoc</key>
 		<data>
-		Eletq/VaLYEiVPwWcBCpwcQWNVk=
+		Ss8NGHBmTembSiie15dtaEt36Ac=
 		</data>
 		<key>Modules/RxCocoa.swiftmodule/arm.swiftmodule</key>
 		<data>
-		b8rdM2PIcpxawzn8QP9BY+AYHjo=
+		G6aMEvImjCN6PlNAeRwh6SwMN7k=
 		</data>
 		<key>Modules/RxCocoa.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		15ElMAeLR74gMhuSHWwoodx9ZwM=
+		nVlzEivG5w87cGZY3z6oT3avJ8s=
 		</data>
 		<key>Modules/RxCocoa.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		H3kkfDVxbVAVWDBYQbusNCSumq0=
+		rC8gjNgpHWX3SETgZYVGRvqN0cg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -57,7 +57,7 @@
 	<dict>
 		<key>Headers/RxCocoa-Swift.h</key>
 		<data>
-		9k540ThbWN49AieE43hh1G8l1c0=
+		JTgDIOoDfUKiGglV1H0tA5XVRCA=
 		</data>
 		<key>Headers/RxCocoa.h</key>
 		<data>
@@ -81,19 +81,19 @@
 		</data>
 		<key>Modules/RxCocoa.swiftmodule/arm.swiftdoc</key>
 		<data>
-		Eletq/VaLYEiVPwWcBCpwcQWNVk=
+		Ss8NGHBmTembSiie15dtaEt36Ac=
 		</data>
 		<key>Modules/RxCocoa.swiftmodule/arm.swiftmodule</key>
 		<data>
-		b8rdM2PIcpxawzn8QP9BY+AYHjo=
+		G6aMEvImjCN6PlNAeRwh6SwMN7k=
 		</data>
 		<key>Modules/RxCocoa.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		15ElMAeLR74gMhuSHWwoodx9ZwM=
+		nVlzEivG5w87cGZY3z6oT3avJ8s=
 		</data>
 		<key>Modules/RxCocoa.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		H3kkfDVxbVAVWDBYQbusNCSumq0=
+		rC8gjNgpHWX3SETgZYVGRvqN0cg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>

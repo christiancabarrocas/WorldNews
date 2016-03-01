@@ -93,18 +93,30 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5rv-YY-7TQ">
+                                <rect key="frame" x="20" y="302" width="560" height="278"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ebd-30-vib" firstAttribute="top" secondItem="HHg-tG-fV0" secondAttribute="bottom" id="7D1-h6-Vy2"/>
+                            <constraint firstItem="a4y-wy-0qM" firstAttribute="top" secondItem="5rv-YY-7TQ" secondAttribute="bottom" constant="20" id="CKB-Ry-Rbq"/>
                             <constraint firstItem="ebd-30-vib" firstAttribute="leading" secondItem="4zc-Sr-if6" secondAttribute="leadingMargin" constant="-20" id="QPV-wx-p4Y"/>
+                            <constraint firstItem="5rv-YY-7TQ" firstAttribute="top" secondItem="ebd-30-vib" secondAttribute="bottom" constant="8" id="Tmz-vw-goH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ebd-30-vib" secondAttribute="trailing" constant="-20" id="aF0-0y-s50"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="5rv-YY-7TQ" secondAttribute="leading" id="aM3-To-OE1"/>
                             <constraint firstAttribute="leadingMargin" secondItem="vsI-p0-lGv" secondAttribute="leading" id="j3d-T4-yRS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5rv-YY-7TQ" secondAttribute="trailing" id="qyL-2K-45v"/>
                             <constraint firstItem="ebd-30-vib" firstAttribute="bottom" secondItem="vsI-p0-lGv" secondAttribute="bottom" constant="10" id="v4I-er-RiC"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="vsI-p0-lGv" secondAttribute="trailing" id="zhF-cR-JA9"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="articleText" destination="5rv-YY-7TQ" id="fHh-PN-wO9"/>
                         <outlet property="image" destination="ebd-30-vib" id="IgD-hk-Nlg"/>
                         <outlet property="titleLabel" destination="vsI-p0-lGv" id="sCp-Fb-VWp"/>
                     </connections>
