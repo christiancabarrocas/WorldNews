@@ -3,17 +3,15 @@
 import UIKit
 import ObjectMapper
 
-enum MediaType:String {
-    case Image = "image"
-}
-
 struct Media : Mappable {
     var caption:String?
-    var url:NSURL?
+    var url:String?
     var copyright:String?
     var width:Int?
     var height:Int?
-    var type:MediaType?
+    var type:String?
+    var subtype:String?
+    var format:String?
     
     init?(_ map: Map) {
         
@@ -24,7 +22,9 @@ struct Media : Mappable {
         width <- map["width"]
         height <- map["height"]
         type <- map["type"]
+        subtype <- map["subtype"]
         caption <- map["caption"]
+        format <- map["format"]
     }
 
 }
