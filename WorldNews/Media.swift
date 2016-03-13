@@ -3,6 +3,14 @@
 import UIKit
 import ObjectMapper
 
+enum MediaFormat:String {
+    case Standard = "Standard Thumbnail"
+    case Large = "thumbLarge"
+    case Normal = "Normal"
+    case Medium = "mediumThreeByTwo210"
+    case Jumbo = "superJumbo"
+}
+
 struct Media : Mappable {
     var caption:String?
     var url:String?

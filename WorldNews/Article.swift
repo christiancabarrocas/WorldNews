@@ -35,5 +35,15 @@ struct Article : Mappable{
         multimedia <- map["multimedia"]
         testURL <- map["multimedia.0.url"]
     }
+    
+    func getBestImage () -> NSURL {
+        for mediaItem in self.multimedia! {
+            if mediaItem.format == MediaFormat.Jumbo.rawValue {
+                return NSURL(string:mediaItem.url!)!
+            }
+        }
+        let media = self.multimedia![0] as Media
+        return NSURL(string:media.url!)!
+    }
 }
 
