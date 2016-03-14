@@ -13,9 +13,7 @@ struct Article : Mappable{
     var source:String?
     var url:String?
     var author:String?
-    var thumbnail:String?
     var multimedia:[Media]?
-    var testURL:String?
     
     init?(_ map: Map) {
         
@@ -31,12 +29,11 @@ struct Article : Mappable{
         source <- map["source"]
         url <- map["url"]
         author <- map["byline"]
-        thumbnail <- map["thumbnail_standard"]
         multimedia <- map["multimedia"]
-        testURL <- map["multimedia.0.url"]
     }
     
     func getBestImage () -> NSURL {
+//        self.multimedia!.filter(mediaFiltering($0))
         for mediaItem in self.multimedia! {
             if mediaItem.format == MediaFormat.Jumbo.rawValue {
                 return NSURL(string:mediaItem.url!)!
@@ -44,6 +41,10 @@ struct Article : Mappable{
         }
         let media = self.multimedia![0] as Media
         return NSURL(string:media.url!)!
+    }
+    
+    func mediaFiltering (media:Media) throws -> Bool  {
+        
     }
 }
 
