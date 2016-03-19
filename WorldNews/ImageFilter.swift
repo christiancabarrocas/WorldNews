@@ -13,7 +13,7 @@ extension UIImageView {
     typealias Filter = CIImage -> CIImage
     
     func blackAndWhite () {
-        let filter = CIFilter(name:"CIPhotoEffectNoir")
+        let filter = CIFilter(name:CIFilterType.BlackWhite.rawValue)
         let context = CIContext(options: nil)
         let ciImage = CIImage(image:self.image!)
         filter!.setValue(ciImage, forKey: kCIInputImageKey)
@@ -24,7 +24,7 @@ extension UIImageView {
     func blur(radius:Double) -> Filter {
         return { image in
             let parameters = [kCIInputRadiusKey:radius,kCIInputImageKey:image]
-            let filter = CIFilter(name: "CIGaussianBlur",withInputParameters:parameters)
+            let filter = CIFilter(name: CIFilterType.GaussianBlur.rawValue,withInputParameters:parameters)
             return filter!.outputImage!
         }
     }

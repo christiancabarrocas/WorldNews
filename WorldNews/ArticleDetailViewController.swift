@@ -18,12 +18,6 @@ class ArticleDetailViewController: UIViewController {
             image?.kf_setImageWithURL((article?.getBestImage())!,
                 placeholderImage: nil,
                 optionsInfo: [.Transition(ImageTransition.Fade(1))])
-//            guard let thumb = article!.testURL else {return}
-//            if let backURL = NSURL(string: thumb) {
-//                image?.kf_setImageWithURL(backURL,
-//                    placeholderImage: nil,
-//                    optionsInfo: [.Transition(ImageTransition.Fade(1))])
-//            }
         }
     }
     

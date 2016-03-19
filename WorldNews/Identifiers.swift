@@ -3,15 +3,20 @@
 import Foundation
 
 enum CellIdentifier:String {
-    case article = "articleCell"
+    case Article = "articleCell"
 }
 
 enum SegueIdentifier:String {
-    case toDetail = "_toArticleDetail"
+    case ToArticleDetail = "_toArticleDetail"
 }
 
 enum StoryBoardIdentifier:String {
-    case mainSB = "Main"
-    case newsList = "_newListStoryBoardID"
+    case MainSB = "Main"
+    case NewsList = "_newListStoryBoardID"
+}
+
+enum CIFilterType:String {
+    case BlackWhite = "CIPhotoEffectNoir"
+    case GaussianBlur = "CIGaussianBlur"
 }
 

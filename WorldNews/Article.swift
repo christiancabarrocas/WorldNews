@@ -32,19 +32,12 @@ struct Article : Mappable{
         multimedia <- map["multimedia"]
     }
     
-    func getBestImage () -> NSURL {
-//        self.multimedia!.filter(mediaFiltering($0))
-        for mediaItem in self.multimedia! {
-            if mediaItem.format == MediaFormat.Jumbo.rawValue {
-                return NSURL(string:mediaItem.url!)!
-            }
+    func getBestImage () -> NSURL? {
+        if let media = self.multimedia!.last {
+            return NSURL(string:media.url!)!
+        }else {
+            return nil
         }
-        let media = self.multimedia![0] as Media
-        return NSURL(string:media.url!)!
-    }
-    
-    func mediaFiltering (media:Media) throws -> Bool  {
-        
     }
 }
 

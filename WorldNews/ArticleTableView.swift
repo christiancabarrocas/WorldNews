@@ -24,13 +24,13 @@ class ArticleTableView: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier.article.rawValue, forIndexPath: indexPath) as! ArticleListCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier.Article.rawValue, forIndexPath: indexPath) as! ArticleListCell
         cell.article = data[indexPath.row]
         return cell
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == SegueIdentifier.toDetail.rawValue {
+        if segue.identifier == SegueIdentifier.ToArticleDetail.rawValue {
             let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell)
             let detailVC = segue.destinationViewController as! ArticleDetailViewController
             detailVC.article = data[indexPath!.row]
