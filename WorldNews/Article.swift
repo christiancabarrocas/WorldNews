@@ -33,11 +33,9 @@ struct Article : Mappable{
     }
     
     func getBestImage () -> NSURL? {
-        if let media = self.multimedia!.last {
-            return NSURL(string:media.url!)!
-        }else {
-            return nil
-        }
+        guard let multimedia = self.multimedia else {return nil}
+        guard let media = multimedia.last else {return nil}
+        return NSURL(string: media.url!)!
     }
 }
 

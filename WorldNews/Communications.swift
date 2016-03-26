@@ -5,9 +5,9 @@ import Alamofire
 import AlamofireObjectMapper
 
 struct Communicator {
-    
-    func retrieveNews (completion: (result:[Article]) -> Void) {
-        Alamofire.request(.GET, apiTopStories).responseObject { (response:Response<NYResponse,NSError>) -> Void in
+
+    func retrieve(type:APIType, completion: (result:[Article]) -> Void) {
+        Alamofire.request(.GET, type.rawValue).responseObject { (response:Response<NYResponse,NSError>) -> Void in
             let nyResponse = response.result.value
             if let someNews = nyResponse?.results {
                 completion(result:someNews)

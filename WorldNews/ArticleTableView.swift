@@ -5,11 +5,11 @@ import UIKit
 class ArticleTableView: UITableViewController {
     
     var data:[Article] = []
-    let viewController = ArticleListController()
+    let presenter = ArticleListController(communicator: Communicator())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewController.updateData { (result) -> Void in
+        presenter.updateData { (result) -> Void in
             self.data = result
             self.tableView.reloadData()
         }
@@ -20,7 +20,7 @@ class ArticleTableView: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return viewController.cellHeight
+        return presenter.cellHeight
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

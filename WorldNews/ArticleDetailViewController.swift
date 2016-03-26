@@ -12,12 +12,13 @@ class ArticleDetailViewController: UIViewController {
             titleLabel.text = article!.title
         }
     }
-    
+
     @IBOutlet weak var image:UIImageView! {
         didSet {
-            image?.kf_setImageWithURL((article?.getBestImage())!,
+            guard let urlImage = article?.getBestImage() else {return}
+            image?.kf_setImageWithURL(urlImage,
                 placeholderImage: nil,
-                optionsInfo: [.Transition(ImageTransition.Fade(1))])
+                optionsInfo: [.Transition(.Fade(1))])
         }
     }
     
