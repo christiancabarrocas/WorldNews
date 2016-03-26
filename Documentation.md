@@ -44,3 +44,22 @@ http://api.nytimes.com/svc/news/{version}/content/{source}/{section}[/time-perio
 "1fcfb44259363feb8fe29102a061fb56:7:70229819"
 
 "http://api.nytimes.com/svc/topstories/v1/home.json?api-key=1fcfb44259363feb8fe29102a061fb56:7:70229819"
+
+Top Stories Subsection:
+home
+world
+national
+politics
+nyregion
+business
+opinion
+technology
+science
+health
+sports
+arts
+fashion
+dining
+travel
+magazine
+realestate
