@@ -10,11 +10,11 @@
 		9E06D64D1B243BC80033AA4E /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E06D64C1B243BC80033AA4E /* Media.swift */; };
 		9E06D6501B255E920033AA4E /* Communications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E06D64F1B255E920033AA4E /* Communications.swift */; };
 		9E06D6521B2561EA0033AA4E /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E06D6511B2561EA0033AA4E /* ArticleListCell.swift */; };
+		9E22E23B1CA7D1A600320CDC /* ArticleListConstructorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E22E23A1CA7D1A600320CDC /* ArticleListConstructorTests.swift */; };
 		9E3DA6311C5E09E500613DCA /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 9E3DA6301C5E09E500613DCA /* Cartfile */; };
 		9E52C0601C6CF66A003E7C4A /* ImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E52C05F1C6CF66A003E7C4A /* ImageFilter.swift */; };
 		9E9A0BA91C51729D0038FB47 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9A0BA81C51729D0038FB47 /* ArrayExtension.swift */; };
 		9E9A0BAB1C51732D0038FB47 /* ArrayExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9A0BAA1C51732D0038FB47 /* ArrayExtensionTest.swift */; };
-		9E9A0BAC1C51740B0038FB47 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9A0BA81C51729D0038FB47 /* ArrayExtension.swift */; };
 		9EA083A51BFB097900EA0B69 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA083A41BFB097900EA0B69 /* Identifiers.swift */; };
 		9EA083A91BFBBAFB00EA0B69 /* NY Newswire API.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9EA083A81BFBBAFB00EA0B69 /* NY Newswire API.rtf */; };
 		9EAC25001C13679E008128B8 /* ArticleListConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAC24FF1C13679E008128B8 /* ArticleListConstructor.swift */; };
@@ -56,6 +56,7 @@
 		9E06D64C1B243BC80033AA4E /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		9E06D64F1B255E920033AA4E /* Communications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Communications.swift; sourceTree = "<group>"; };
 		9E06D6511B2561EA0033AA4E /* ArticleListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListCell.swift; sourceTree = "<group>"; };
+		9E22E23A1CA7D1A600320CDC /* ArticleListConstructorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListConstructorTests.swift; sourceTree = "<group>"; };
 		9E3DA6301C5E09E500613DCA /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		9E52C05F1C6CF66A003E7C4A /* ImageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFilter.swift; sourceTree = "<group>"; };
 		9E9A0BA81C51729D0038FB47 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
@@ -200,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				9E9A0BAA1C51732D0038FB47 /* ArrayExtensionTest.swift */,
+				9E22E23A1CA7D1A600320CDC /* ArticleListConstructorTests.swift */,
 				9EBF05841B22E96700241111 /* Supporting Files */,
 			);
 			path = WorldNewsTests;
@@ -326,7 +328,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxTests.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/AwesomeCache.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			name = Carthage;
@@ -364,8 +365,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E9A0BAC1C51740B0038FB47 /* ArrayExtension.swift in Sources */,
 				9E9A0BAB1C51732D0038FB47 /* ArrayExtensionTest.swift in Sources */,
+				9E22E23B1CA7D1A600320CDC /* ArticleListConstructorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
