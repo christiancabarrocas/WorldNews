@@ -28,6 +28,16 @@ class ArticleDetailViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var articleContent:UIWebView! {
+        didSet {
+            guard let contentURL = NSURL(string: article!.url!) else {
+                articleContent.hidden = true
+                return
+            }
+            articleContent.loadRequest(NSURLRequest(URL: contentURL))
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
