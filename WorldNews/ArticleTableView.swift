@@ -5,7 +5,7 @@ import UIKit
 class ArticleTableView: UITableViewController {
     
     var data:[Article] = []
-    let constructor = ArticleListConstructor(communicator: Communicator(), apiType: APIType.TopStoriesWorld)
+    let constructor = ArticleListConstructor(communicator: Communicator(), apiEndpoint: .TopStoriesWorld)
     
     override func viewDidLoad() {
         super.viewDidLoad()

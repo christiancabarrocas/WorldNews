@@ -30,7 +30,7 @@ class ArticleDetailViewController: UIViewController {
     
     @IBOutlet weak var articleContent:UIWebView! {
         didSet {
-            guard let contentURL = NSURL(string: article!.url!) else {
+            guard let contentURL = article?.link() else {
                 articleContent.hidden = true
                 return
             }

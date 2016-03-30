@@ -7,15 +7,15 @@ struct ArticleListConstructor {
     
     let cellHeight:CGFloat = 80.0
     let communicator: Communicator
-    let apiType: APIType
+    let apiEndpoint: APIEndpoint
     
-    init (communicator: Communicator, apiType: APIType) {
+    init (communicator: Communicator, apiEndpoint: APIEndpoint) {
         self.communicator = communicator
-        self.apiType = apiType
+        self.apiEndpoint = apiEndpoint
     }
     
     func updateData (completion: (result:[Article]) -> Void) {
-        communicator.retrieve(apiType) { (result) -> Void in
+        communicator.retrieve(apiEndpoint) { (result) -> Void in
             if result.hasItems() {
                 completion(result: result)
             }

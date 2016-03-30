@@ -15,9 +15,7 @@ struct Article : Mappable{
     var author:String?
     var multimedia:[Media]?
     
-    init?(_ map: Map) {
-        
-    }
+    init?(_ map: Map) {}
     
     mutating func mapping(map: Map) {
         title <- map["title"]
@@ -36,6 +34,10 @@ struct Article : Mappable{
         guard let multimedia = self.multimedia else {return nil}
         guard let media = multimedia.last else {return nil}
         return NSURL(string: media.url!)!
+    }
+    
+    func link() -> NSURL {
+        return NSURL(string: url!)!
     }
 }
 

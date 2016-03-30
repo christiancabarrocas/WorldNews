@@ -40,18 +40,30 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoM-HW-8Qy">
+                                            <rect key="frame" x="74" y="40" width="33.5" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="0oo-YI-xFQ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstItem="GoM-HW-8Qy" firstAttribute="leading" secondItem="8Qu-qb-9qD" secondAttribute="trailing" constant="10" id="3TB-UC-yuF"/>
                                         <constraint firstItem="oXb-qY-zGb" firstAttribute="leading" secondItem="GWP-O9-QK8" secondAttribute="leading" constant="15" id="EZR-h0-1QM"/>
                                         <constraint firstItem="8Qu-qb-9qD" firstAttribute="top" secondItem="oXb-qY-zGb" secondAttribute="bottom" id="SvL-UX-Fbi"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8Qu-qb-9qD" secondAttribute="trailing" constant="15" id="UoX-li-FHj"/>
                                         <constraint firstItem="oXb-qY-zGb" firstAttribute="centerY" secondItem="GWP-O9-QK8" secondAttribute="centerY" constant="-10" id="WAr-4J-Gz0"/>
+                                        <constraint firstItem="GoM-HW-8Qy" firstAttribute="baseline" secondItem="8Qu-qb-9qD" secondAttribute="baseline" id="Xya-0M-m3f"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oXb-qY-zGb" secondAttribute="trailing" constant="15" id="caf-Hi-Wvz"/>
                                         <constraint firstItem="8Qu-qb-9qD" firstAttribute="leading" secondItem="GWP-O9-QK8" secondAttribute="leading" constant="15" id="fQV-G6-s91"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GoM-HW-8Qy" secondAttribute="trailing" constant="10" id="m9X-vZ-qWL"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dateLabel" destination="GoM-HW-8Qy" id="gHM-o4-BsI"/>
                                     <outlet property="sectionLabel" destination="8Qu-qb-9qD" id="6PJ-Gk-ISC"/>
                                     <outlet property="titleLabel" destination="oXb-qY-zGb" id="wTY-Xf-oOo"/>
                                     <segue destination="1s9-WX-6mL" kind="show" identifier="_toArticleDetail" id="awn-bC-pAb"/>

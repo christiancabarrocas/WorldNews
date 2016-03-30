@@ -22,7 +22,7 @@ enum TopStories: String {
     case RealState = "realstate"
 }
 
-enum APIType: String {
+enum APIEndpoint: String {
     
     case TopStoriesHome = "http://api.nytimes.com/svc/topstories/v1/home.json?api-key=1fcfb44259363feb8fe29102a061fb56:7:70229819"
     case TopStoriesWorld = "http://api.nytimes.com/svc/topstories/v1/world.json?api-key=1fcfb44259363feb8fe29102a061fb56:7:70229819"
