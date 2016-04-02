@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/RxDataSources-Swift.h</key>
 		<data>
-		NjxDX4pWpq0Feka5fPj9A0zL7mY=
+		elQzsIj06FyWivQfGEmg3UdWDys=
 		</data>
 		<key>Headers/RxDataSources.h</key>
 		<data>
@@ -14,23 +14,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		1QPghqmxoUSVQMopPUWDsoKliD4=
+		7UQCL3v9AXktrKeAQwet37eAVyw=
 		</data>
 		<key>Modules/RxDataSources.swiftmodule/arm.swiftdoc</key>
 		<data>
-		0BzZ8uYPslppugVpHMD4WVkFKoI=
+		E68yfCKtc4Hwlg/lTdRyutYkr/Y=
 		</data>
 		<key>Modules/RxDataSources.swiftmodule/arm.swiftmodule</key>
 		<data>
-		n1EkCkPGctxnNVSvFeoJDaTHABI=
+		IRIWKBdUxNaN8cDa4NpurH+2Ukk=
 		</data>
 		<key>Modules/RxDataSources.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		cBK2246QlbJpLPMVJYPuGDrjn54=
+		ZNoHTnH0luLTrN2xAs0qkUUQIWo=
 		</data>
 		<key>Modules/RxDataSources.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		8r+FzeTyXAhdHXI1ojNmokFtJeU=
+		mtq2MoxJteCYS/7w5Skt2eslyBA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -41,7 +41,7 @@
 	<dict>
 		<key>Headers/RxDataSources-Swift.h</key>
 		<data>
-		NjxDX4pWpq0Feka5fPj9A0zL7mY=
+		elQzsIj06FyWivQfGEmg3UdWDys=
 		</data>
 		<key>Headers/RxDataSources.h</key>
 		<data>
@@ -49,19 +49,19 @@
 		</data>
 		<key>Modules/RxDataSources.swiftmodule/arm.swiftdoc</key>
 		<data>
-		0BzZ8uYPslppugVpHMD4WVkFKoI=
+		E68yfCKtc4Hwlg/lTdRyutYkr/Y=
 		</data>
 		<key>Modules/RxDataSources.swiftmodule/arm.swiftmodule</key>
 		<data>
-		n1EkCkPGctxnNVSvFeoJDaTHABI=
+		IRIWKBdUxNaN8cDa4NpurH+2Ukk=
 		</data>
 		<key>Modules/RxDataSources.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		cBK2246QlbJpLPMVJYPuGDrjn54=
+		ZNoHTnH0luLTrN2xAs0qkUUQIWo=
 		</data>
 		<key>Modules/RxDataSources.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		8r+FzeTyXAhdHXI1ojNmokFtJeU=
+		mtq2MoxJteCYS/7w5Skt2eslyBA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>

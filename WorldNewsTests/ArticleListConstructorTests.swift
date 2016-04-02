@@ -18,7 +18,7 @@ class ArticleListConstructorTests: XCTestCase {
     override func setUp() {
         super.setUp()
         communicator = Communicator()
-        constructor = ArticleListConstructor(communicator: communicator, apiType: APIType.TopStoriesHome)
+        constructor = ArticleListConstructor(communicator: communicator, apiEndpoint: APIEndpoint.TopStoriesHome)
     }
     
     override func tearDown() {
@@ -28,8 +28,8 @@ class ArticleListConstructorTests: XCTestCase {
     func testConstructorInit() {
         XCTAssertTrue(constructor.cellHeight == 80.0)
         XCTAssertNotNil(constructor.communicator)
-        XCTAssertNotNil(constructor.apiType)
-        XCTAssertTrue(constructor.apiType == APIType.TopStoriesHome)
+        XCTAssertNotNil(constructor.apiEndpoint)
+        XCTAssertTrue(constructor.apiEndpoint == APIEndpoint.TopStoriesHome)
     }
     
     func testUpdataData() {
