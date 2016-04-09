@@ -178,6 +178,14 @@ SWIFT_PROTOCOL("_TtP10Kingfisher23ImageDownloaderDelegate_")
 
 
 @interface UIButton (SWIFT_EXTENSION(Kingfisher))
+@end
+
+
+@interface UIButton (SWIFT_EXTENSION(Kingfisher))
+@end
+
+
+@interface UIButton (SWIFT_EXTENSION(Kingfisher))
 
 /// Cancel the image download task bounded to the image view if it is running. Nothing will happen if the downloading has already finished.
 - (void)kf_cancelImageDownloadTask;
@@ -199,10 +207,6 @@ SWIFT_PROTOCOL("_TtP10Kingfisher23ImageDownloaderDelegate_")
 
 
 @interface UIButton (SWIFT_EXTENSION(Kingfisher))
-@end
-
-
-@interface UIButton (SWIFT_EXTENSION(Kingfisher))
 
 /// Get the background image URL binded to this button for a specified state.
 ///
@@ -210,14 +214,6 @@ SWIFT_PROTOCOL("_TtP10Kingfisher23ImageDownloaderDelegate_")
 ///
 /// \returns  Current URL for background image.
 - (NSURL * _Nullable)kf_backgroundWebURLForState:(UIControlState)state;
-@end
-
-
-@interface UIButton (SWIFT_EXTENSION(Kingfisher))
-@end
-
-
-@interface UIImage (SWIFT_EXTENSION(Kingfisher))
 @end
 
 
@@ -239,6 +235,10 @@ SWIFT_PROTOCOL("_TtP10Kingfisher23ImageDownloaderDelegate_")
 ///
 /// \returns  The normalized image with orientation set to up and correct scale.
 - (UIImage * _Nonnull)kf_normalizedImage;
+@end
+
+
+@interface UIImage (SWIFT_EXTENSION(Kingfisher))
 @end
 
 

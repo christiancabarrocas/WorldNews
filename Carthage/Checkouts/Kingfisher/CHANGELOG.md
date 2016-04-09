@@ -2,6 +2,22 @@
 
 -----
 
+## [2.2.2 - Spring Bird II](https://github.com/onevcat/Kingfisher/releases/tag/2.2.2) (2016-04-06)
+
+#### Fix
+* Add default values to optional parameters, which should be a part of 2.2.1. [#284](https://github.com/onevcat/Kingfisher/issues/284)
+
+---
+
+## [2.2.1 - Spring Bird](https://github.com/onevcat/Kingfisher/releases/tag/2.2.1) (2016-04-06)
+
+#### Fix
+* A memory leak caused by closure based Generator. [#281](https://github.com/onevcat/Kingfisher/pull/281)
+* Remove duplicated APIs since auto completion gets improved in Swift 2.2. [#283](https://github.com/onevcat/Kingfisher/pull/283)
+* Enable all recongnized format for `UIImage`. [#278](https://github.com/onevcat/Kingfisher/pull/278)
+
+---
+
 ## [2.2.0 - Open Source Swift](https://github.com/onevcat/Kingfisher/releases/tag/2.2.0) (2016-03-24)
 
 #### Add
