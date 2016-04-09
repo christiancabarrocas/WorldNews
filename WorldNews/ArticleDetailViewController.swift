@@ -2,6 +2,7 @@
 
 import UIKit
 import Kingfisher
+import Haneke
 
 class ArticleDetailViewController: UIViewController {
 
@@ -16,6 +17,11 @@ class ArticleDetailViewController: UIViewController {
     @IBOutlet weak var image:UIImageView! {
         didSet {
             guard let urlImage = article?.getBestImage() else {return}
+            
+            //Haneke version
+//            image.hnk_setImageFromURL(urlImage)
+            
+            //Kingsfisher version
             image?.kf_setImageWithURL(urlImage,
                 placeholderImage: nil,
                 optionsInfo: [.Transition(.Fade(1))])
