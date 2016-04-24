@@ -94,7 +94,10 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #if defined(__has_feature) && __has_feature(modules)
 @import ObjectiveC;
 @import Foundation;
+@import Dispatch;
+@import Foundation.NSURLSession;
 @import UIKit;
+@import CoreGraphics;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -125,6 +128,8 @@ SWIFT_CLASS("_TtC10Kingfisher15ImageDownloader")
 
 /// Delegate of this ImageDownloader object. See ImageDownloaderDelegate protocol for more.
 @property (nonatomic, weak) id <ImageDownloaderDelegate> _Nullable delegate;
+@property (nonatomic, readonly, strong) dispatch_queue_t _Nonnull barrierQueue;
+@property (nonatomic, readonly, strong) dispatch_queue_t _Nonnull processQueue;
 
 /// The default downloader.
 + (ImageDownloader * _Nonnull)defaultDownloader;
@@ -137,12 +142,13 @@ SWIFT_CLASS("_TtC10Kingfisher15ImageDownloader")
 - (nonnull instancetype)initWithName:(NSString * _Nonnull)name OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSURL;
 
 @interface ImageDownloader (SWIFT_EXTENSION(Kingfisher))
+- (void)cleanForURL:(NSURL * _Nonnull)URL;
 @end
 
 @class UIImage;
-@class NSURL;
 @class NSURLResponse;
 
 
@@ -164,6 +170,34 @@ SWIFT_PROTOCOL("_TtP10Kingfisher23ImageDownloaderDelegate_")
 - (void)imageDownloader:(ImageDownloader * _Nonnull)downloader didDownloadImage:(UIImage * _Nonnull)image forURL:(NSURL * _Nonnull)URL withResponse:(NSURLResponse * _Nonnull)response;
 @end
 
+@class NSURLSession;
+@class NSURLSessionDataTask;
+@class NSData;
+@class NSURLSessionTask;
+@class NSError;
+@class NSURLAuthenticationChallenge;
+@class NSURLCredential;
+
+
+/// Delegate class for NSURLSessionTaskDelegate. The session object will hold its delegate until it gets invalidated. If we use ImageDownloader as the session delegate, it will not be released. So we need an additional handler to break the retain cycle.
+SWIFT_CLASS("_TtC10Kingfisher29ImageDownloaderSessionHandler")
+@interface ImageDownloaderSessionHandler : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate>
+@property (nonatomic, strong) ImageDownloader * _Nullable downloadHolder;
+
+/// This method is exposed since the compiler requests. Do not call it.
+- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveResponse:(NSURLResponse * _Nonnull)response completionHandler:(void (^ _Nonnull)(NSURLSessionResponseDisposition))completionHandler;
+
+/// This method is exposed since the compiler requests. Do not call it.
+- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveData:(NSData * _Nonnull)data;
+
+/// This method is exposed since the compiler requests. Do not call it.
+- (void)URLSession:(NSURLSession * _Nonnull)session task:(NSURLSessionTask * _Nonnull)task didCompleteWithError:(NSError * _Nullable)error;
+
+/// This method is exposed since the compiler requests. Do not call it.
+- (void)URLSession:(NSURLSession * _Nonnull)session didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 @interface NSData (SWIFT_EXTENSION(Kingfisher))
 @end
@@ -174,10 +208,14 @@ SWIFT_PROTOCOL("_TtP10Kingfisher23ImageDownloaderDelegate_")
 
 
 @interface UIActivityIndicatorView (SWIFT_EXTENSION(Kingfisher))
+- (void)kf_startAnimating;
+- (void)kf_stopAnimating;
+@property (nonatomic) CGPoint kf_center;
 @end
 
 
-@interface UIButton (SWIFT_EXTENSION(Kingfisher))
+@interface UIApplication (SWIFT_EXTENSION(Kingfisher))
++ (UIApplication * _Nullable)kf_sharedApplication;
 @end
 
 
@@ -196,13 +234,6 @@ SWIFT_PROTOCOL("_TtP10Kingfisher23ImageDownloaderDelegate_")
 
 
 @interface UIButton (SWIFT_EXTENSION(Kingfisher))
-
-/// Get the image URL binded to this button for a specified state.
-///
-/// \param state The state that uses the specified image.
-///
-/// \returns  Current URL for image.
-- (NSURL * _Nullable)kf_webURLForState:(UIControlState)state;
 @end
 
 
@@ -217,32 +248,54 @@ SWIFT_PROTOCOL("_TtP10Kingfisher23ImageDownloaderDelegate_")
 @end
 
 
-@interface UIImage (SWIFT_EXTENSION(Kingfisher))
+@interface UIButton (SWIFT_EXTENSION(Kingfisher))
+
+/// Get the image URL binded to this button for a specified state.
+///
+/// \param state The state that uses the specified image.
+///
+/// \returns  Current URL for image.
+- (NSURL * _Nullable)kf_webURLForState:(UIControlState)state;
 @end
 
 
 @interface UIImage (SWIFT_EXTENSION(Kingfisher))
++ (UIImage * _Nullable)kf_imageWithData:(NSData * _Nonnull)data scale:(CGFloat)scale;
 @end
 
 
 @interface UIImage (SWIFT_EXTENSION(Kingfisher))
++ (UIImage * _Nullable)kf_animatedImageWithGIFDataWithGifData:(NSData * _Nonnull)data;
++ (UIImage * _Nullable)kf_animatedImageWithGIFDataWithGifData:(NSData * _Nonnull)data scale:(CGFloat)scale duration:(NSTimeInterval)duration;
 @end
 
 
 @interface UIImage (SWIFT_EXTENSION(Kingfisher))
+- (UIImage * _Nullable)kf_decodedImage;
+- (UIImage * _Nullable)kf_decodedImageWithScale:(CGFloat)scale;
+@end
+
+
+@interface UIImage (SWIFT_EXTENSION(Kingfisher))
++ (UIImage * _Nonnull)kf_imageWithCGImage:(CGImageRef _Nonnull)cgImage scale:(CGFloat)scale refImage:(UIImage * _Nullable)refImage;
 
 /// Normalize the image. This method will try to redraw an image with orientation and scale considered.
 ///
 /// \returns  The normalized image with orientation set to up and correct scale.
 - (UIImage * _Nonnull)kf_normalizedImage;
++ (UIImage * _Nullable)kf_animatedImageWithImages:(NSArray<UIImage *> * _Nonnull)images duration:(NSTimeInterval)duration;
 @end
 
 
 @interface UIImage (SWIFT_EXTENSION(Kingfisher))
+@property (nonatomic, readonly) NSInteger kf_imageCost;
 @end
 
 
 @interface UIImage (SWIFT_EXTENSION(Kingfisher))
+@property (nonatomic, readonly) CGFloat kf_scale;
+@property (nonatomic, readonly, copy) NSArray<UIImage *> * _Nullable kf_images;
+@property (nonatomic, readonly) NSTimeInterval kf_duration;
 @end
 
 

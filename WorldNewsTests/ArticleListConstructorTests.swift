@@ -33,8 +33,6 @@ class ArticleListConstructorTests: XCTestCase {
     }
     
     func testUpdataData() {
-        constructor.updateData { (result) -> Void in
-            XCTAssertNotNil(result)
-        }
+        XCTAssertNotNil(constructor.data)
     }
 }

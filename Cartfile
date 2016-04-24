@@ -4,3 +4,4 @@ github "ReactiveX/RxSwift" ~> 2.0
 github "onevcat/Kingfisher" ~> 2.0
 github "RxSwiftCommunity/RxDataSources"
 github "Haneke/HanekeSwift"
+github "realm/realm-cocoa"
